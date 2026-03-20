@@ -17,6 +17,9 @@ jobs:
         with:
           root_file: main.tex
 
+      - name: Rename PDF
+        run: mv main.pdf chlee_CV.pdf
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
