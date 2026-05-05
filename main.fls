@@ -96,9 +96,8 @@ INPUT /opt/texlive/texdir/texmf-dist/tex/latex/fontawesome5/fontawesome5-generic
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/fontawesome5/fontawesome5-generic-helper.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/fontawesome5/fontawesome5-mapping.def
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/fontawesome5/fontawesome5-mapping.def
-INPUT /opt/texlive/texdir/texmf-dist/tex/latex/moderncv/moderncvcolors.tex
-INPUT /opt/texlive/texdir/texmf-dist/tex/latex/moderncv/moderncvcolors.tex
-INPUT /opt/texlive/texdir/texmf-dist/tex/latex/moderncv/moderncvcolors.tex
+INPUT /opt/texlive/texdir/texmf-dist/tex/latex/moderncv/moderncvcolors.sty
+INPUT /opt/texlive/texdir/texmf-dist/tex/latex/moderncv/moderncvcolors.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/moderncv/moderncviconstikz.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/moderncv/moderncviconstikz.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
@@ -201,6 +200,8 @@ INPUT /opt/texlive/texdir/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
 INPUT /opt/texlive/texdir/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 INPUT /opt/texlive/texdir/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 INPUT /opt/texlive/texdir/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+INPUT /opt/texlive/texdir/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybabel.code.tex
+INPUT /opt/texlive/texdir/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybabel.code.tex
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/moderncv/moderncvheadiii.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/moderncv/moderncvheadiii.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/moderncv/moderncvbodyiii.sty
@@ -218,7 +219,6 @@ INPUT /opt/texlive/texdir/texmf-dist/tex/latex/fontawesome5/ufontawesomefree0.fd
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/fontawesome5/fa5free0regular.tfm
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/moderncv/moderncvcolorblue.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/moderncv/moderncvcolorblue.sty
-INPUT /opt/texlive/texdir/texmf-dist/tex/latex/moderncv/moderncvcolors.tex
 INPUT /opt/texlive/texdir/texmf-dist/tex/generic/academicons/academicons.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/generic/academicons/academicons.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/generic/academicons/academicons-pdftex.tex
