@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1783353737.25752 "main.tex" "main.pdf" "main" 1783353738.27366 0
+["pdflatex"] 1783354076.65336 "main.tex" "main.pdf" "main" 1783354077.68233 0
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/academicons/academicons.enc" 1758138305 1913 283dadb2a00b197d8788e0687b94c508 ""
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/fontawesome6/fa6free1.enc" 1746389010 3397 26707aca1c94039c601bbbe9ca0bfcd2 ""
@@ -199,9 +199,9 @@
   "/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1782931182 5573030 e9a973387705481b4e2cb8bfeaf8fe6e ""
   "/opt/texlive/texdir/texmf-var/web2c/pdftex/pdflatex.fmt" 1782931320 3656467 a5ebb1661181d99d7ab3cd063291429c ""
   "/opt/texlive/texdir/texmf.cnf" 1782931175 555 bd60ff59e4d560b42d96b004436f91d3 ""
-  "main.aux" 1783353738.08525 1570 733acc373634c012947804dbbffa2250 "pdflatex"
-  "main.out" 1783353738.08525 1612 d8a4b20eb59f861107400ab10d9a0e4c "pdflatex"
-  "main.tex" 1783353644.58831 10282 58186bf5c3d8fec2e61160fba0fd8460 ""
+  "main.aux" 1783354077.49693 1570 733acc373634c012947804dbbffa2250 "pdflatex"
+  "main.out" 1783354077.49693 1612 d8a4b20eb59f861107400ab10d9a0e4c "pdflatex"
+  "main.tex" 1783353995.09446 10415 63fcf8460c9acffc792ae44547efedc0 ""
   (generated)
   "main.aux"
   "main.log"
