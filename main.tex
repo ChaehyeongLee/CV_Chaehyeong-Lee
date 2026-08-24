@@ -12,6 +12,41 @@
 \usepackage[scale=0.85,letterpaper]{geometry}
 \newcommand{\doi}[1]{\href{https://doi.org/#1}{doi:#1}}
 
+% Publication list with hanging indent, numbered DOWN (n, n-1, ..., 1)
+% within each publist block. Entries are collected as they are read and
+% typeset at \end{publist}, once the total is known -- so one compile is
+% always enough and the numbers can never go stale.
+%
+%   \begin{publist}{Under Review}
+%     \pubitem{...}     % prints "2."
+%     \pubitem{...}     % prints "1."
+%   \end{publist}
+%
+\newlength{\pubindent}
+\setlength{\pubindent}{1.25em}   % width of the "1." label / hanging indent
+\makeatletter
+\newcounter{pubnum}   % number printed on the current entry
+\newcounter{pubcnt}   % entries collected so far in this block
+\newcommand{\pub@list}{}
+\newcommand{\pub@typeset}[2]{%
+  \noindent\hangindent=\pubindent\hangafter=1%
+  \makebox[\pubindent][l]{\arabic{pubnum}.}#2%
+  \addtocounter{pubnum}{-1}%
+  \par\addvspace{#1}}
+\newcommand{\pubitem}[2][.25em]{%   % [vertical space after] {entry}
+  \stepcounter{pubcnt}%
+  \g@addto@macro\pub@list{\pub@do{#1}{#2}}}
+\newenvironment{publist}[1]{%
+  \subsection{#1}%
+  \global\let\pub@list\@empty
+  \setcounter{pubcnt}{0}%
+}{%
+  \setcounter{pubnum}{\value{pubcnt}}%
+  \let\pub@do\pub@typeset
+  \pub@list
+  \global\let\pub@list\@empty}
+\makeatother
+
 % Personal data
 \name{Chaehyeong}{Lee}
 \address{Boulder, Colorado, USA}{}
@@ -26,8 +61,8 @@
 %------------------------------------------------------------------------------
 \section{Research Interests}
 % \cvitem{}{Ocean dynamics and climate sciences: ocean heat budget; ocean's role in climate systems.}
-\cvitem{}{Geofluid Dynamics: cross-scale upper-ocean mixing processes; Mesoscale eddies.}
-\cvitem{}{Physical Oceanography: long-term change in the upper-ocean thermal state; ocean's role in climate systems.}
+\cvitem{}{Geofluid Dynamics: Cross-scale upper-ocean mixing processes; Mesoscale eddies.}
+\cvitem{}{Physical Oceanography: Long-term change in the upper-ocean thermal state; Ocean's role in climate systems.}
 
 %------------------------------------------------------------------------------
 \section{Education}
@@ -59,30 +94,35 @@
 %--------------------------------------------------------------------------------
 \section{Publications}
 
-\subsection{Published}
-\cvitem{}{
-\textbf{Lee, C.}, Song, H., Choi, Y., Cho, A., \& Marshall, J. (2025). 
-Observed Multi-decadal Increase in the Surface Ocean’s Thermal Inertia. 
-\textit{Nature Climate Change}, \textbf{15}, 308-314. 
-\doi{10.1038/s41558-025-02245-w}
-}
-\vspace{1em}
-
-\subsection{Under Review}
-\cvitem{}{
+\begin{publist}{Under Review}
+\pubitem{
 \textbf{Lee, C.}, Giglio, D., Subramanian, A. C., Han, W., Capotondi, A., Du, D., Molod, A., \& Ruiz-Xomochuk, V. (2026).
 Effects of Satellite Sea Surface Salinity Assimilation on the Representation of Upper-Ocean Thermohaline Structure and Variability in the NASA GEOS-S2S-2 model.
 \textit{Quarterly Journal of the Royal Meteorological Society} % \textbf{}
 % \textit{}
 }
+\end{publist}
 
-\vspace{1em}
+\vspace{0.5em}
 
-\subsection{{In preperation}}
-\cvitem{}{
-\textbf{Lee, C.}, Giglio, D., Subramanian, A. C., Mazloff, M., \& Arbic, B. K. 
-Ocean Advection Drives Mixed Layer Temperature Variability in Energetic Regions of the Global Ocean.
+\begin{publist}{In Preparation}
+\pubitem{
+\textbf{Lee, C.}, Giglio, D., Subramanian, A. C., Mazloff, M., \& Arbic, B. K.
+% Ocean Advection Drives Mixed Layer Temperature Variability in Energetic Regions of the Global Ocean.
 }
+\end{publist}
+
+\vspace{0.5em}
+
+\begin{publist}{Published}
+\pubitem{
+\textbf{Lee, C.}, Song, H., Choi, Y., Cho, A., \& Marshall, J. (2025).
+Observed Multi-decadal Increase in the Surface Ocean’s Thermal Inertia.
+\textit{Nature Climate Change}, \textbf{15}, 308-314.
+\doi{10.1038/s41558-025-02245-w}
+}
+\end{publist}
+
 
 %------------------------------------------------------------------------------
 \section{Research Experience}
@@ -122,7 +162,7 @@ Ocean Advection Drives Mixed Layer Temperature Variability in Energetic Regions 
 \section{Teaching Experience}
 \cventry{Spring 2026}
         {Teaching Assistant}
-        {Data Science Laboratory, taught by Prof. Donata Giglio at CU Boulder}
+        {Data Science Laboratory} %, taught by Prof. Donata Giglio at CU Boulder}
         {Boulder, CO, USA}
         {}
         {}
@@ -131,7 +171,7 @@ Ocean Advection Drives Mixed Layer Temperature Variability in Energetic Regions 
 
 \cventry{Spring 2023}
         {Teaching Assistant}
-        {Climate \& Civilization, taught by Prof. Yign Noh at Yonsei Univ.}
+        {Climate \& Civilization}%, taught by Prof. Yign Noh at Yonsei Univ.}
         {Seoul, Rep. of Korea}
         {}
         {}
@@ -140,7 +180,7 @@ Ocean Advection Drives Mixed Layer Temperature Variability in Energetic Regions 
 
 \cventry{Fall 2022}
         {Teaching Assistant}
-        {Physical Oceanography, taught by Prof. Hajoon Song at Yonsei Univ.}
+        {Physical Oceanography}%, taught by Prof. Hajoon Song at Yonsei Univ.}
         {Seoul, Rep. of Korea}
         {}
         {}
@@ -277,7 +317,7 @@ Ocean Advection Drives Mixed Layer Temperature Variability in Energetic Regions 
         {}                           % 6: description [cite: 71, 72, 76, 77]
 
 %------------------------------------------------------------------------------
-\section{Service}
+\section{Academic Service}
 \cvitem{Peer Reviewer}{\textit{Journal of Climate}}
 
 %------------------------------------------------------------------------------
