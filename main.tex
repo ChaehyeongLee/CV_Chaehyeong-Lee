@@ -1,7 +1,7 @@
-\documentclass[11pt,usletter,sans]{moderncv}
+\documentclass[10pt,usletter,sans]{moderncv}
 
 % Style and color
-\moderncvstyle{banking}   % casual, classic, oldstyle, banking
+\moderncvstyle{classic}   % casual, classic, oldstyle, banking
 \moderncvcolor{blue}      % blue, orange, green, red, purple, grey, black
 \setlength{\hintscolumnwidth}{4cm} 
 \renewcommand{\arraystretch}{1.1}  
@@ -28,11 +28,19 @@
 \newcounter{pubnum}   % number printed on the current entry
 \newcounter{pubcnt}   % entries collected so far in this block
 \newcommand{\pub@list}{}
+% Indent the entry into moderncv's main column, mirroring \cvitem's geometry,
+% so the hints column (under the blue section rule) is left empty as in the
+% sections where it carries only dates. \leftskip is used rather than \cvitem
+% because the latter takes short arguments (no \par, hence no \hangindent) and
+% its tabular cannot break across pages.
 \newcommand{\pub@typeset}[2]{%
-  \noindent\hangindent=\pubindent\hangafter=1%
-  \makebox[\pubindent][l]{\arabic{pubnum}.}#2%
+  \begingroup
+    \advance\leftskip by \dimexpr\hintscolumnwidth+\separatorcolumnwidth\relax
+    \noindent\hangindent=\pubindent\hangafter=1%
+    \makebox[\pubindent][l]{\arabic{pubnum}.}#2\par
+  \endgroup
   \addtocounter{pubnum}{-1}%
-  \par\addvspace{#1}}
+  \addvspace{#1}}
 \newcommand{\pubitem}[2][.25em]{%   % [vertical space after] {entry}
   \stepcounter{pubcnt}%
   \g@addto@macro\pub@list{\pub@do{#1}{#2}}}
@@ -107,7 +115,7 @@ Effects of Satellite Sea Surface Salinity Assimilation on the Representation of 
 
 \begin{publist}{In Preparation}
 \pubitem{
-\textbf{Lee, C.}, Giglio, D., Subramanian, A. C., Mazloff, M., \& Arbic, B. K.
+\textbf{Lee, C.}, Giglio, D., Subramanian, A. C., \& Arbic, B. K.
 % Ocean Advection Drives Mixed Layer Temperature Variability in Energetic Regions of the Global Ocean.
 }
 \end{publist}
@@ -214,7 +222,7 @@ Observed Multi-decadal Increase in the Surface Ocean’s Thermal Inertia.
 \section{Invited Talk}
     
 \cventry{Dec.~2025}                 % 1: date (right)
-        {\parbox[t]{0.8\textwidth}{\textit{Assessing the Impact of Satellite Sea Surface Salinity Assimilation on Vertical Structure of the Upper Ocean in the NASA GEOS-S2S 2.}}}
+        {\parbox[t]{\dimexpr\maincolumnwidth-1em\relax}{\textit{Assessing the Impact of Satellite Sea Surface Salinity Assimilation on Vertical Structure of the Upper Ocean in the NASA GEOS-S2S 2.}}}
         {NASA Salinity Telecon}      % 3: event name (bold, left)
         {Virtual Meeting}             % 4: location (right)
         {}                           % 5: empty (grade)
@@ -223,50 +231,45 @@ Observed Multi-decadal Increase in the Surface Ocean’s Thermal Inertia.
 %------------------------------------------------------------------------------
 \section{Selected Presentations}
 \cventry{Jan.~2027 (scheduled)}                 % 1: date (right)
-        {\parbox[t]{0.78\textwidth}{\textit{Ocean Advection Drives Mixed Layer Temperature Variance at 10-100 km in the Gulf Stream Extension.}}}
+        {\parbox[t]{\dimexpr\maincolumnwidth-1em\relax}{\textit{Ocean Advection Drives Mixed Layer Temperature Variance at 10-100 km in the Gulf Stream Extension.}}}
         {2027 American Meteorological Society Annual Meeting (poster)}   % 3: event name (bold, left) 
         {Denver, CO, USA}           % 4: location (right)
-        {}
         {}
         {\emph{\textbf{Lee, C.}, Giglio, D., \& Subramanian, A. C.}}
         
 \vspace{0.8em}
 
 \cventry{Sep.~2026}                 % 1: date (right)
-        {\parbox[t]{0.78\textwidth}{\textit{Submesoscale Horizontal Advection Drives High-Frequency Upper-Ocean Variability.}}}
+        {\parbox[t]{\dimexpr\maincolumnwidth-1em\relax}{\textit{Submesoscale Horizontal Advection Drives High-Frequency Upper-Ocean Variability.}}}
         {US Climate Variability and Predictability (poster)}   % 3: event name (bold, left) 
         {Boulder, CO, USA}           % 4: location (right)
-        {}
         {}
         {\emph{\textbf{Lee, C.}, Giglio, D., \& Subramanian, A. C.}}
         
 \vspace{0.8em}
 
 \cventry{Feb.~2026}                 % 1: date (right)
-        {\parbox[t]{0.8\textwidth}{\textit{Assessing the Impact of Satellite Sea Surface Salinity Assimilation on the Upper Ocean Thermal State in the NASA GEOS S2S-v2 Model.}}}
+        {\parbox[t]{\dimexpr\maincolumnwidth-1em\relax}{\textit{Assessing the Impact of Satellite Sea Surface Salinity Assimilation on the Upper Ocean Thermal State in the NASA GEOS S2S-v2 Model.}}}
         {Ocean Science Meeting 2026 (poster)}   % 3: event name (bold, left)
         {Glasgow, Scotland}           % 4: location (right)
-        {}
         {}
         {\emph{\textbf{Lee, C.}, Giglio, D., Subramanian, A. C., Han, W., Capotondi, A., Du, D., \& Molod, A.}}
         
 \vspace{0.8em}
 
 \cventry{Dec.~2022}                 % 1: date (right)
-        {\parbox[t]{0.8\textwidth}{\textit{The Increasing Trend of Persistence of Sea Surface Temperature in the Past 40 Years.}}}
+        {\parbox[t]{\dimexpr\maincolumnwidth-1em\relax}{\textit{The Increasing Trend of Persistence of Sea Surface Temperature in the Past 40 Years.}}}
         {American Geophysical Union Fall Meeting (poster)}   % 3: event name (bold, left)
         {Chicago, IL, USA}            % 4: location (right)
-        {}
         {}
         {\emph{\textbf{Lee, C.}, Song, H., Cho, A., \& Tak, Y.}}
         
 \vspace{0.8em}
 
 \cventry{Jun.~2022}                 % 1: date (right)
-        {\parbox[t]{0.8\textwidth}{\textit{Increasing Persistence of SST Anomalies and Duration of Marine Heatwaves.}}}
+        {\parbox[t]{\dimexpr\maincolumnwidth-1em\relax}{\textit{Increasing Persistence of SST Anomalies and Duration of Marine Heatwaves.}}}
         {Korean Society of Oceanography Spring Conference (talk)} % 3: event name (bold, left)
         {Jeju, Rep. of Korea}        % 4: location (right)
-        {}
         {}
         {\emph{\textbf{Lee, C.}, Song, H., Cho, A., \& Tak, Y.}}
 
@@ -274,8 +277,8 @@ Observed Multi-decadal Increase in the Surface Ocean’s Thermal Inertia.
 \section{Workshops}
 
 \cventry{Sep.~2026}                 % 1: date (right)
+        {Broadening Earth System Research Across Scales with High-Resolution Modeling Workshop}
         {US Climate Variability and Predictability}
-        {\parbox[t]{0.7\textwidth}{Broadening Earth System Research Across Scales with High-Resolution Modeling Workshop}}
         {Boulder, CO, USA}
         {}
         {}
@@ -283,8 +286,8 @@ Observed Multi-decadal Increase in the Surface Ocean’s Thermal Inertia.
 \vspace{0.5em}
 
 \cventry{Jun.~2026}                 % 1: date (right)
+        {Data Assimilation Training and Science Workshop}
         {Consortium for Advanced Data Assimilation Research and Education \& NOAA EPIC}
-        {\parbox[t]{0.7\textwidth}{Data Assimilation Training and Science Workshop}}
         {Norman, OK, USA}        % 4: location (right)
         {}                           % 5: empty (grade)
         {}                           % 6: description [cite: 70, 74, 75]
@@ -292,8 +295,8 @@ Observed Multi-decadal Increase in the Surface Ocean’s Thermal Inertia.
 \vspace{0.5em}
 
 \cventry{Jun.~2024}                 % 1: date (right)
+        {14th International Workshop on Modeling the Ocean 2024}
         {International Workshop on Modeling the Ocean}
-        {\parbox[t]{0.7\textwidth}{14th International Workshop on Modeling the Ocean 2024}}
         {Sapporo, Japan}        % 4: location (right)
         {}                           % 5: empty (grade)
         {}                           % 6: description [cite: 70, 74, 75]
@@ -301,8 +304,8 @@ Observed Multi-decadal Increase in the Surface Ocean’s Thermal Inertia.
 \vspace{0.5em}
 
 \cventry{Jan.~2022}                 % 1: date (right)
+        {User Training for the Glosea 6 Climate Prediction Model}
         {Korea Meteorological Administration}
-        {\parbox[t]{0.7\textwidth}{User Training for the Glosea 6 Climate Prediction Model}}
         {Jeju, Rep. of Korea}        % 4: location (right)
         {}                           % 5: empty (grade)
         {}                           % 6: description [cite: 70, 74, 75]
@@ -310,8 +313,8 @@ Observed Multi-decadal Increase in the Surface Ocean’s Thermal Inertia.
 \vspace{0.5em}
 
 \cventry{Jan.~2022}                 % 1: date (right)
+        {Deep Learning Training: Fundamentals of Deep Learning}
         {NVIDIA Deep Learning Institute}
-        {\parbox[t]{0.7\textwidth}{Deep Learning Training: Fundamentals of Deep Learning}}
         {Gonju, Rep. of Korea}       % 4: location (right)
         {}                           % 5: empty (grade)
         {}                           % 6: description [cite: 71, 72, 76, 77]
